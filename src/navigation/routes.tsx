@@ -15,8 +15,8 @@ import { HomePage } from '@/pages/Home';
 export const routes = createBrowserRouter(
   [
     { path: "/", element: <OnboardingPage />, },
-    { path: "/welcome", element: <HomePage />, },
-    { path: "/home", element: <WelcomePage />, },
+    { path: "/welcome", element: <WelcomePage />, },
+    { path: "/home", element: <HomePage />, },
     { path: "*", element: <OnboardingPage />, },
   ],
   { basename: import.meta.env.BASE_URL }
