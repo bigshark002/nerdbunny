@@ -5,10 +5,10 @@ const Header = () => {
 
   return (
     <Box
-      className='h-[37px] flex px-2 justify-between items-center text-white'
+      className='h-[37px] font-Poppins flex px-4 justify-between items-center text-white'
     >
-      <Typography text='Cancel' />
-      <Typography text='NerdBunny' />
+      <Typography className='font-semibold text-[17px] tracking-[-.44px]' text='Cancel' />
+      <Typography className='font-semibold text-[17px] tracking-[-.44px]' text='NerdBunny' />
       <Button
         icon={<ElipsisCircleOutline width={22} height={22} />}
       />

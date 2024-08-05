@@ -18,21 +18,22 @@ export const OnboardingPage: FC = () => {
 
   return (
     <Box
-      className='flex flex-col justify-between w-full bg-cover bg-center h-screen'
+      className={`flex flex-col justify-between w-full relative z-10 bg-cover bg-center h-screen before:content-['']
+        before:absolute before:inset-0 before:bg-gradient-to-b before:from-black/80 before:via-black/30 before:to-black/80 before:z-[-5]`}
       background={background}
     >
       <Header />
       <Box
-        className='w-[300px] mx-auto flex flex-col items-center justify-center gap-8'
+        className='w-[400px] mx-auto flex flex-col items-center justify-center gap-8'
       >
         <Image src={logoNerdBunny} />
         <Typography
-          className='font-bold text-[17px] text-PurplePrimary text-center border-PurpleSecond'
+          className='h-[38px] font-Rowdies font-bold text-[17px] leading-4 indent-1.5 tracking-[.5px] text-stroke-1 text-stroke-PurpleSecond text-PurplePrimary text-center border-PurpleSecond'
           text={Title}
         />
       </Box>
       <Box
-        className='w-[286px] mx-auto flex items-center justify-between gap-4 mb-[80px]'
+        className='w-[286px] mx-auto flex items-center justify-between gap-4 mb-[90px]'
       >
         {Actions.map(item => (
           <Button
