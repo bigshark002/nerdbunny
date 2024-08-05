@@ -1,0 +1,18 @@
+import { type FC } from 'react';
+import { SvgIconProps } from '@/types';
+
+const SvgNews: FC<SvgIconProps> = ({ width = 40, height = 40 }) => {
+  return (
+    <svg width={width} height={height} viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
+      <rect width="40" height="40" fill="url(#pattern0_33_19)" />
+      <defs>
+        <pattern id="pattern0_33_19" patternContentUnits="objectBoundingBox" width="1" height="1">
+          <use xlinkHref="#image0_33_19" transform="scale(0.00714286)" />
+        </pattern>
+        <image id="image0_33_19" width="140" height="140" xlinkHref="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIwAAACMCAYAAACuwEE+AAAACXBIWXMAAAsSAAALEgHS3X78AAAGvUlEQVR4nO3dX2hbVRwH8F/TpEmapmn6b/1j96dr4uomSGATC3bzRZENNh990gd98sH66INO9EH0ZW/6UBEniAiiCBuIIjgRlI1liMPOlq2b0HX2z9It7bq0aSe/zGxLmj/3m94/a/r9QB/S3Jzb3PvNOeeec3pTs++5w00i8pmIHBai4o6LyJBbRN5hWMiAl0TksktEnuDRIoMOuHikCMHAEISBIYh7vYcrurAisRtpCaZXM49HA26Jh9ySdNdA5XQ2p2T/nlkJ+tOZx5PXfXL2Ykgmr3uhclbqXXKz3y+3ttbd+1347ILU/7MElUOFVRwYDcnRsQXpSK0WfP6rLq8M9/jLBkeD8vaLYxLbeaPg8/GLIXn3y0jZ4GhQJl4Iy7VnQ2uemzgSFu9MWnYMT0vjhcWS5VBptd19u14Wke3IcTo0tSQfXpiXhpU7RbfZk1yRp+aW5cfWOllyFQ5NtHtBPh36Q7a1Fz+JGqhD+/6V3y+EZTZZV3AbDcvIm12SiAWKlqPbzDwdFO9smrVN5a7AfRitWd4aWzC0bWRhJROsQrTp+fi1P6XBt1K2HN1Gt802V/lGX+/IaYJKufRKm9zc5cfeNN0DB+aowbBkacC0Rsr3xpFxQ2HJ0m31Nfm01kju8kF/0/irbdD2dB8UGO3gFuuzlHJwKrXm2YN7p/By9k6tqWUSsXq4nFSrm7VMhaDA7J+trO3XWibncV/hDq4Rke7cGq5Uv6WUZD9WK9FdG24cJtqFNYlkrg0XmPnFdQ8d0TpAgZn01Va0p/na3Mvq9Zz00au5TZCOr1Si9hbeFyMwMGdDlZ3oUy2enMejEwG5lsBGcJW+Rl/7oGCFA3E6+ks4rIbxuuRku7HxjgcNb117RTL8/Va8nAKv6f42AZfT+muy4ppps4P7MMd21Ms1r/GXvRcJZIKW78SZdjl5pt1wOb+cb868Jp+e+N5Ppg2Xo6O8276YNbw95YKnBnSYPx7yyOPJtLQsF58akP/DcqJEjXTqfIt0NacyUwSlaLA++HqnLKULB1VDoEP+5S6xdbv+96+y/1K5KxXNJc3WueSbDq9oV7YrtbpmTkmbLQ3Lb2FP0TKyNDRjVwOyfcuitASXc57Ticdj3+2Qz396pGhYsjQM4fiCrNbVSKrNI3c89zvaWgt1/HBD+j6aEleZkFNJV3QR+M86Jrfe46SDc/PuGhkNVHYllZWtbfI7tygdzU21ejg7ba5Tpg1qxCu8gsq33qBkaa3Cjq35XE2Nja3V9qbIGsGGQJMr1BjcwuNLRrQ2h7e5XK4ajrWTYa7nnxmc4OEiIzQr7gMDT860tbbIX3+P8aBRUY89GpHd0b6ZTHO0O9qX+SEqh/+XRBAGhiAMDEEYGIIwMARhYAjCwBCEgSEIA0MQBoYgDAxBGBiCMDAEYWAIwsAQhIEhCANDEFsWgKfTaUkmkzwzJgqHw47s1/LAaFji8bjMzxe+myZVprOzU/r7+20/epY3SVqzMCzmm5ycdGS/lgfG4yn/D/mEc7ud+Xcyy/fa0NCQqTqd+kRUq2g06sg7syWm2t7qD218vKwmCANDEAaGIAwMQRgYgjAwBGFgCMLAEISBIQgDQxAGhiAMDEFsmXzUmWrOVptHlzb09vZmVgLYvm+rd6CLp0ZGRqzezaYzNzcng4ODtr9ty5uk5eVlA1sRSpe+OsHywASDQcdWh1WzpqYmR96d5WdSwzIwMCDT09Ny+/Ztq3e3KWjfpa3NmW/3t+Wjr6HhirvqwMtqgjAwBGFgCMLAEISBIQgDQxAGhiAMDEEYGIIwMARhYAhi2zRyIpHgmTGJ3nPHicVTYldgTp8+zbtQmaxqb1mmNQvDYj7esow2BMsDo21tT08P02AiXV/kRHMkdvVhIpFI5oc2Pl5WE4SBIQgDQxAGhiAMDEEYGIIwMARhYAjCwBCEgSEIA0MQBoYgtkw+6poYvWMSmUcXUPl8PtuPqOWB0XvCnDt3zurdbDq6gErvu2M3y5ukxcXFzX5uLeHUzZksD4zf7+ctyyxQtYvAtZ2NxWKZW5aReZxaxWjLR18/DU59IshcvKwmCANDEAaGIAwMQRgYgjAwBGFgCMLAEISBIQgDQxAGhiAMDEFsmXzU73zcyF8Smp1xd2KF28PGlluWbfRvlNXFSuPj4w/BX+I8NkkEsTww4XDYsS+0NIs2Rbzt2l229GG0/afqwCaJIAwMQRgYgjAwBGFgCMLAEISBIQgDQxAGhiAMDEEYGIIwMARhYAjCwBCEgSEIA0MQDcxlHjIy6LIGZkhEjvOIURnHRWToP7YsqzazpQ/oAAAAAElFTkSuQmCC" />
+      </defs>
+    </svg>
+  )
+}
+
+export default SvgNews;

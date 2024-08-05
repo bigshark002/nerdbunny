@@ -1,0 +1,18 @@
+import { type FC } from 'react';
+import { SvgIconProps } from '@/types';
+
+const SvgTelegram: FC<SvgIconProps> = ({ width = 37, height = 37 }) => {
+  return (
+    <svg width={width} height={height} viewBox="0 0 37 37" fill="none" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
+      <rect width="37" height="36.6509" fill="url(#pattern0_32_630)" />
+      <defs>
+        <pattern id="pattern0_32_630" patternContentUnits="objectBoundingBox" width="1" height="1">
+          <use xlinkHref="#image0_32_630" transform="scale(0.00943396 0.00952381)" />
+        </pattern>
+        <image id="image0_32_630" width="106" height="105" xlinkHref="data:image/png;base64,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" />
+      </defs>
+    </svg>
+  )
+}
+
+export default SvgTelegram;
