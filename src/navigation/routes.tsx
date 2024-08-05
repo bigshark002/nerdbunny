@@ -2,7 +2,7 @@ import { createBrowserRouter } from 'react-router-dom';
 
 import { OnboardingPage } from '@/pages/Onboarding';
 import { WelcomePage } from '@/pages/Welcome';
-// import { HomePage } from '@/pages/Home';
+import { HomePage } from '@/pages/Home';
 // import { EarnPage } from '@/pages/Earn';
 // import { BuildPage } from '@/pages/Build';
 // import { FriendsPage } from '@/pages/Friends';
@@ -15,7 +15,8 @@ import { WelcomePage } from '@/pages/Welcome';
 export const routes = createBrowserRouter(
   [
     { path: "/", element: <OnboardingPage />, },
-    { path: "/welcome", element: <WelcomePage />, },
+    { path: "/welcome", element: <HomePage />, },
+    { path: "/home", element: <WelcomePage />, },
     { path: "*", element: <OnboardingPage />, },
   ],
   { basename: import.meta.env.BASE_URL }

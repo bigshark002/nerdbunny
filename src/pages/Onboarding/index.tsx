@@ -28,7 +28,7 @@ export const OnboardingPage: FC = () => {
       >
         <Image src={logoNerdBunny} />
         <Typography
-          className='h-[38px] font-Rowdies font-bold text-[17px] leading-4 indent-1.5 tracking-[.5px] text-stroke-1 text-stroke-PurpleSecond text-PurplePrimary text-center border-PurpleSecond'
+          className='h-[38px] font-Rowdies font-bold text-[17px] leading-4 tracking-[.5px] text-stroke-1 text-stroke-PurpleSecond text-PurplePrimary text-center border-PurpleSecond'
           text={Title}
         />
       </Box>

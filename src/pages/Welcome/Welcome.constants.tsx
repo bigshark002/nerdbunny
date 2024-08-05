@@ -25,33 +25,32 @@ export const Contents = [
   }
 ];
 
-export const Actions = [
-  {
-    id: 1,
-    icon: <X width={20} height={19.62} />,
-    bgColor: 'PinkPrimary',
-    text: 'x',
-    link: '',
-  },
+export const Actions = [  
   {
     id: 0,
     icon: <Telegram width={22} height={21.79} />,
-    bgColor: 'PurpleSecond',
+    bgColor: 'bg-PurpleSecond shadow-PurpleSecond',
     text: 'CHANNEL',
     link: '',
   },
-  
+  {
+    id: 1,
+    icon: <X width={20} height={19.62} />,
+    bgColor: 'bg-PinkPrimary shadow-PinkPrimary',
+    text: 'X',
+    link: '',
+  },
   {
     id: 2,
     icon: <Chat width={25} height={22} />,
-    bgColor: 'GreenPrimary',
+    bgColor: 'bg-GreenPrimary shadow-GreenPrimary',
     text: 'CHAT 26',
     link: '',
   },
   {
     id: 3,
     icon: <Chat width={25} height={22} />,
-    bgColor: 'GreenPrimary',
+    bgColor: 'bg-GreenPrimary shadow-GreenPrimary',
     text: 'CHAT 26',
     link: '',
   }
