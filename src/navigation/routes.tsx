@@ -5,7 +5,7 @@ import { WelcomePage } from '@/pages/Welcome';
 import { HomePage } from '@/pages/Home';
 // import { EarnPage } from '@/pages/Earn';
 // import { BuildPage } from '@/pages/Build';
-// import { FriendsPage } from '@/pages/Friends';
+import { FriendsPage } from '@/pages/Friends';
 // import { LeadPage } from '@/pages/Lead';
 // import { JoinSquadPage } from '@/pages/JoinSquad';
 // import { SquadDetailPage } from '@/pages/SquadDetail';
@@ -17,6 +17,7 @@ export const routes = createBrowserRouter(
     { path: "/", element: <OnboardingPage />, },
     { path: "/welcome", element: <WelcomePage />, },
     { path: "/home", element: <HomePage />, },
+    { path: '/friend', element: <FriendsPage /> },
     { path: "*", element: <OnboardingPage />, },
   ],
   { basename: import.meta.env.BASE_URL }
@@ -28,7 +29,6 @@ export const routes = createBrowserRouter(
 // { path: '/home', Component: HomePage },
 // { path: '/earn', Component: EarnPage },
 // { path: '/build', Component: BuildPage },
-// { path: '/friend', Component: FriendsPage },
 // { path: '/lead', Component: LeadPage },
 // { path: '/joinsquad', Component: JoinSquadPage },
 // { path: '/squad/:id', Component: SquadDetailPage },

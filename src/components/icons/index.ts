@@ -6,6 +6,6 @@ export { default as ElipsisCircleOutline } from './ElipsisCircleOutline';
 export { default as News } from './News';
 export { default as Telegram } from './Telegram';
 export { default as X } from './X';
-
+export { default as GiftBlue } from './GiftBlue';
 export { default as Chevron } from './Chevron';
 export { default as Group } from './Group';

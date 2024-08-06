@@ -1,5 +1,5 @@
-import React, { type FC } from 'react';
-import ReactDOM from 'react-dom';
+import React, { type FC } from 'react'
+import ReactDOM from 'react-dom'
 
 interface ModalProps {
   isOpen: boolean;
@@ -21,4 +21,4 @@ const Modal: FC<ModalProps> = ({ isOpen, children }) => {
   )
 }
 
-export default Modal;
+export default Modal

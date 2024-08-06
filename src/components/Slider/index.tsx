@@ -1,7 +1,7 @@
-import { type FC, useState, useEffect } from 'react';
-import { Box, Button, Typography } from '@/components/common';
-import { SliderProps } from './Slider.types';
-import { Next } from '@/components/icons';
+import { type FC, useState, useEffect } from 'react'
+import { Box, Button, Typography } from '@/components/common'
+import { SliderProps } from './Slider.types'
+import { Next } from '@/components/icons'
 
 const Slider: FC<SliderProps> = ({ options, name, value, type, coin, onChange }) => {
   const [option, setOption] = useState(options?.filter(item => item.id === value)[0]);
@@ -44,4 +44,4 @@ const Slider: FC<SliderProps> = ({ options, name, value, type, coin, onChange })
   )
 }
 
-export default Slider;
+export default Slider

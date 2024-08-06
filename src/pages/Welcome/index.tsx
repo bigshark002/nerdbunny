@@ -1,10 +1,10 @@
-import { type FC } from 'react';
-import { useNavigate } from 'react-router-dom';
-import Header from '@/components/Header';
-import { Box, Button, Typography, Image } from '@/components/common';
-import { background } from '@/components/images';
-import { BunnyPurple } from '@/components/icons';
-import { Title, TilteDescription, Contents, Actions } from './Welcome.constants';
+import { type FC } from 'react'
+import { useNavigate } from 'react-router-dom'
+import Header from '@/components/Header'
+import { Box, Button, Typography, Image } from '@/components/common'
+import { background } from '@/components/images'
+import { BunnyPurple } from '@/components/icons'
+import { Title, TilteDescription, Contents, Actions } from './Welcome.constants'
 
 export const WelcomePage: FC = () => {
   const navigate = useNavigate();
@@ -35,7 +35,10 @@ export const WelcomePage: FC = () => {
         <Box
           className='w-[330px] h-[251px] flex flex-col px-7 py-5 mx-auto rounded-[25px] gap-6 bg-BluePrimary shadow-BluePrimary border-2 border-solid border-White'
         >
-          <Typography className='font-Rowdies text-[14px] font-bold tracking-[.5px]' text='HOW TO PLAY?' />
+          <Typography
+            className='font-Rowdies text-[14px] font-bold tracking-[.5px] text-stroke-1 text-stroke-Black'
+            text='HOW TO PLAY?'
+          />
           {Contents.map(item => (
             <Box
               key={item.id}
@@ -46,7 +49,7 @@ export const WelcomePage: FC = () => {
               >
                 <Image className={item.size} src={item.image} />
               </Box>
-              <Typography className='font-Montserrat font-extrabold leading-4 tracking-[.5px] text-[11px]' text={item.text} />
+              <Typography className='font-Montserrat font-extrabold leading-4 spacing-[10px] tracking-[.5px] text-[11px] text-stroke-0 text-stroke-BlueThird ' text={item.text} />
             </Box>
           ))}
         </Box>

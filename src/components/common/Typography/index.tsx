@@ -1,4 +1,4 @@
-import { type FC } from 'react';
+import { type FC } from 'react'
 
 interface TypographyProps {
   className?: string;
@@ -16,10 +16,10 @@ const Typography: FC<TypographyProps> = ({ className = '', text, onClick }) => {
   }
 
   return (
-    <span className={`${className} overflow-x-hidden text-ellipsis`} onClick={handleClick}>
+    <span className={`${className} text-ellipsis`} onClick={handleClick}>
       {text}
     </span>
   )
 }
 
-export default Typography;
+export default Typography

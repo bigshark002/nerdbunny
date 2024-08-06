@@ -1,4 +1,4 @@
-import React, { type FC, RefObject } from 'react';
+import React, { type FC, RefObject } from 'react'
 
 interface BoxProps {
   className?: string;

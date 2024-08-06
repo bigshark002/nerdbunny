@@ -6,6 +6,12 @@ export default {
   ],
   theme: {
     extend: {
+      textShadowWidth: {
+        '0': '0.5px',
+        '1': '1px',
+        '2': '2px',
+        '3': '3px',
+      },
       textStrokeWidth: {
         '0': '0.5px',
         '1': '1px',
@@ -25,6 +31,7 @@ export default {
         GreenPrimary: '0 5px #43B75D',
         YellowPrimary: '0 5px #FFE500',
         YellowSecond: '0 5px #C8E600',
+        YellowThird: '0 5px #FADA46',
       },
       colors: {
         Black: '#000000',
@@ -39,20 +46,30 @@ export default {
         GreenPrimary: '#43B75D',
         YellowPrimary: '#FFE500',
         YellowSecond: '#C8E600',
+        YellowThird: '#FADA46',
       }
     },
   },
   plugins: [
     function ({ addUtilities, theme }) {
       const newUtilities = {}
+      Object.entries(theme('textShadowWidth')).forEach(([key, value]) => {
+        newUtilities[`.text-shadow-${key}`] = {
+          'text-shadow': `-${value} 0 var(--tw-text-shadow-color), ${value} 0 var(--tw-text-shadow-color), 0 -${value} var(--tw-text-shadow-color), 0 ${value} var(--tw-text-shadow-color)`,
+        }
+      })
       Object.entries(theme('textStrokeWidth')).forEach(([key, value]) => {
         newUtilities[`.text-stroke-${key}`] = {
           '-webkit-text-stroke-width': value,
+          'paint-order': 'stroke fill',
         }
       })
       Object.entries(theme('colors')).forEach(([key, value]) => {
         newUtilities[`.text-stroke-${key}`] = {
           '-webkit-text-stroke-color': value,
+        }
+        newUtilities[`.text-shadow-${key}`] = {
+          '--tw-text-shadow-color': value,
         }
       })
       addUtilities(newUtilities, ['responsive', 'hover'])

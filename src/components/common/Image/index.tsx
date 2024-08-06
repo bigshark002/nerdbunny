@@ -1,4 +1,4 @@
-import { type FC } from 'react';
+import { type FC } from 'react'
 
 interface ImageProps {
   src: string;
@@ -13,4 +13,4 @@ const Image: FC<ImageProps> = ({ src, className = '', alt = '' }) => {
   )
 }
 
-export default Image;
+export default Image

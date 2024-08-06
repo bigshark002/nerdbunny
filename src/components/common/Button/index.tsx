@@ -1,9 +1,10 @@
-import React, { type FC } from 'react';
-import { ClipLoader } from 'react-spinners';
+import React, { type FC } from 'react'
+import { ClipLoader } from 'react-spinners'
 
 interface ButtonProps {
   className?: string;
   icon?: React.ReactElement;
+  image?: string;
   content?: string;
   isLoading?: boolean;
   spinSize?: number;
@@ -14,9 +15,9 @@ interface ButtonProps {
   onClick?: () => void;
 }
 
-const Button: FC<ButtonProps> = ({ className = '', icon, content = '', isLoading = false, spinSize = 14, spinColor = 'white', enabled = true, link = '', children, onClick }) => {
+const Button: FC<ButtonProps> = ({ className = '', icon, image, content = '', isLoading = false, spinSize = 14, spinColor = 'white', enabled = true, link = '', children, onClick }) => {
 
-  const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {    
+  const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
     if (onClick) {
       e.stopPropagation();
       onClick();
@@ -32,6 +33,7 @@ const Button: FC<ButtonProps> = ({ className = '', icon, content = '', isLoading
         <ClipLoader size={spinSize} color={spinColor} />
         :
         <>
+          {image && <img src={image ?? ''} alt='' />}          
           {icon ?? icon}
           {content ?? content}
           {children ?? children}
@@ -41,4 +43,4 @@ const Button: FC<ButtonProps> = ({ className = '', icon, content = '', isLoading
   )
 }
 
-export default Button;
+export default Button
