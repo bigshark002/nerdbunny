@@ -2,82 +2,46 @@ import { type FC, useState } from 'react';
 import Header from '@/components/Header';
 import Switch from '@/components/Switch';
 import Slider from '@/components/Slider';
-import { Box, Typography } from '@/components/common';
-import { PROFILE_TYPES, TIME_TYPES } from '@/constants/common';
-import { INITIAL_STATE, PROFILE_STEPS } from '@/pages/Profile/Profile.constants';
-
-import Background from '@/assets/images/bg_welcome.png';
+import LeaderBoard from '@/components/LeaderBoard';
+import { Box } from '@/components/common';
+import { PROFILE_TYPES } from '@/constants/common';
+import { background } from '@/components/images';
+import { InitialState, ProfileSteps } from './Profile.constants';
 
 export const ProfilePage: FC = () => {
 
-  const [data, setData] = useState(INITIAL_STATE);
+  const [data, setData] = useState(InitialState);
 
   const handleChange = (name: string, value: string | number) => {
     setData(prevState => ({ ...prevState, [name]: value }));
-  }
+  };
 
   return (
     <Box
-      className='flex flex-col w-full items-center bg-cover bg-center h-screen'
-      background={Background}
+      className={`flex flex-col w-full bg-cover bg-center h-screen relative z-0 before:content-['']
+        before:absolute before:inset-0 before:bg-gradient-to-b before:from-black/80 before:via-black/30 before:to-black/80 before:z-[-5]`}
+      background={background}
     >
       <Header />
-      <Switch
-        options={PROFILE_TYPES}
-        name='profile'
-        value={data?.profile}
-        onChange={handleChange}
-      />
-      <Slider
-        options={PROFILE_STEPS}
-        name='step'
-        value={data?.step ?? 0}
-        type={data?.profile}
-        coin='1M'
-        onChange={handleChange}
-      />
       <Box
-        className='w-[343px] h-[477px] bg-[#C58BFB] rounded-[12px] flex flex-col items-center py-4 gap-6'
+        className='font-Montserrat w-[341px] mx-auto mt-[12px] flex flex-col items-center'
       >
         <Switch
-          options={TIME_TYPES}
-          name='time'
-          value={data?.time}
+          options={PROFILE_TYPES}
+          name='profile'
+          value={data?.profile}
           onChange={handleChange}
         />
-        <Box
-          className='relative w-full h-[400px] overflow-y-auto flex flex-col items-center gap-4'
-        >
-          <Box className='w-[311px] h-[52px] flex items-center gap-2'>
-            <Typography text='1' />
-            <Typography text='Multivalue' />
-          </Box>
-          <Box className='w-[311px] h-[52px] flex items-center gap-2'>
-            <Typography text='2' />
-            <Typography text='Multivalue' />
-          </Box>
-          <Box className='w-[311px] h-[52px] flex items-center gap-2'>
-            <Typography text='3' />
-            <Typography text='Multivalue' />
-          </Box>
-          <Box className='w-[311px] h-[52px] flex items-center gap-2'>
-            <Typography text='4' />
-            <Typography text='Multivalue' />
-          </Box>
-          <Box className='w-[311px] h-[52px] flex items-center gap-2'>
-            <Typography text='5' />
-            <Typography text='Multivalue' />
-          </Box>
-          <Box className='w-[311px] h-[52px] flex items-center gap-2'>
-            <Typography text='6' />
-            <Typography text='Multivalue' />
-          </Box>
-          <Box className='w-[311px] h-[52px] flex items-center gap-2'>
-            <Typography text='7' />
-            <Typography text='Multivalue' />
-          </Box>
-        </Box>
+        <Slider
+          options={ProfileSteps}
+          name='step'
+          value={data?.step ?? 0}
+          type={data?.profile}
+          coin='1M'
+          onChange={handleChange}
+        />
+        <LeaderBoard type={data.time} height='h-[577px]' handleChange={handleChange} />
       </Box>
     </Box>
-  )
-}
+  );
+};

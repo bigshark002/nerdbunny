@@ -1,18 +1,12 @@
 import { type FC } from 'react';
 import { SvgIconProps } from '@/types';
 
-const SvgNext: FC<SvgIconProps> = ({ width = 8, height = 13 }) => {
+const SvgNext: FC<SvgIconProps> = ({ width = 24, height = 24 }) => {
   return (
-    <svg width={width} height={height} viewBox="0 0 8 13" fill="none" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
-      <rect width="8" height="12.6316" fill="url(#pattern0_33_47)" />
-      <defs>
-        <pattern id="pattern0_33_47" patternContentUnits="objectBoundingBox" width="1" height="1">
-          <use xlinkHref="#image0_33_47" transform="scale(0.0526316 0.0333333)" />
-        </pattern>
-        <image id="image0_33_47" width="19" height="30" xlinkHref="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABMAAAAeCAYAAADOziUSAAAACXBIWXMAAAsSAAALEgHS3X78AAAA/klEQVRIia3W4Q2CMBAF4CcL2BEYgREYwRE6giM4Am6gE+gIjIAbMAJO8ExNm9Sk1/Yql9wfaL7QctxxIIm9ovPODIA+NwBDi98lrh09ftoDC+ADgFVp7sxIWsph/Zpixgty4EWLuRxJbgJ402Iuh1ZQupEDZ5JGg7nsSS4CuKTA0qEaDVjzynPg6o+kGgvgTQC3ANZiISVwbcFcPgXQaqFcyfR7QZNmm7bmq6iFpDhr6kzVmnLQpIFyWK5AR+kBtNCQ2ckPZnx7aYJirNQd+poSKn0iyb4lZRh1JjG4XgBGP5T/mpt3LRRjboK7eAO4+uGrglzEPy5hq2rkGwA+NWWJyu8xUkEAAAAASUVORK5CYII=" />
-      </defs>
+    <svg width={width} height={height} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M9.76355 5.64645L9.41 5.29289L9.05645 5.64645L7.64645 7.05645L7.29328 7.40961L7.64606 7.76317L11.8737 12L7.64606 16.2368L7.29328 16.5904L7.64645 16.9436L9.05645 18.3536L9.41 18.7071L9.76355 18.3536L15.7636 12.3536L16.1171 12L15.7636 11.6464L9.76355 5.64645Z" fill="currentColor" />
     </svg>
-  )
-}
+  );
+};
 
 export default SvgNext;

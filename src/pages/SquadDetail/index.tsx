@@ -1,89 +1,52 @@
 import { type FC, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import Header from '@/components/Header';
-import Switch from '@/components/Switch';
-import { Box, Button, Typography } from '@/components/common';
-import { TIME_TYPES } from '@/constants/common';
-
-import Background from '@/assets/images/bg_welcome.png';
+import SquadView from '@/components/SquadView';
+import LeaderBoard from '@/components/LeaderBoard';
+import { Box, Button } from '@/components/common';
+import { background, bunnyGreen } from '@/components/images';
+import { Actions } from './SquadDetail.constants';
 
 export const SquadDetailPage: FC = () => {
+  const { t } = useTranslation();
   const { id } = useParams();
 
   const [type, setType] = useState('day');
 
   const handleChange = (name: string, value: string) => {
     if (name) setType(value);
-  }
+  };
+
+  const handleLink = (link: string) => {
+    console.log('link', link);
+  };
 
   return (
     <Box
-      className='flex flex-col w-full bg-cover bg-center h-screen'
-      background={Background}
+      className={`flex flex-col w-full relative z-0 bg-cover bg-center h-screen before:content-['']
+        before:absolute before:inset-0 before:bg-gradient-to-b before:from-black/80 before:via-black/30 before:to-black/80 before:z-[-5]`}
+      background={background}
     >
       <Header />
       <Box
-        className='w-[343px] mx-auto flex flex-col items-center gap-6'
+        className='w-[343px] font-Montserrat text-white mt-1 mx-auto flex flex-col items-center gap-6'
       >
-        <Typography text={id ?? 'NerdBunnyFrontend'} />
-        <Box
-          className='flex flex-wrap gap-[7px]'
-        >
-          <Button className='w-[168px] h-[82px] bg-[#C58BFB] rounded-[21px] flex items-center justify-center' content='PLATIUM' />
-          <Button className='w-[168px] h-[82px] bg-[#C58BFB] rounded-[21px] flex items-center justify-center' content='PLATIUM' />
-          <Button className='w-[168px] h-[82px] bg-[#C58BFB] rounded-[21px] flex items-center justify-center' content='PLATIUM' />
-          <Button className='w-[168px] h-[82px] bg-[#C58BFB] rounded-[21px] flex items-center justify-center' content='PLATIUM' />
-        </Box>
+        <SquadView image={bunnyGreen} name={id ?? ''} level='Platinum' memberCount={324537} link='Platinum' />
         <Box
           className='flex items-center justify-between gap-2'
         >
-          <Button className='w-[109px] h-[48px] text-[10px] bg-[#EFEA6E] rounded-[21px]' content='INVITE FRIEND' />
-          <Button className='w-[109px] h-[48px] text-[10px] bg-[#5AA5E4] rounded-[21px]' content='ADD SQUAD' />
-          <Button className='w-[109px] h-[48px] text-[10px] bg-[#E4AE47] rounded-[21px]' content='LEAVE SQUAD' />
+          {Actions.map(item => (
+            <Button
+              key={item.id}
+              className={`w-[109px] h-[45.46px] text-[10px] ${item.bgColor} rounded-[15px] border-2 border-white text-[12px] font-extrabold flex items-center justify-center`}
+              content={t(item.text)}
+              onClick={() => handleLink(item.link)}
+            />
+          ))}
         </Box>
-        <Box
-          className='w-[343px] h-[337px] bg-[#C58BFB] rounded-[12px] flex flex-col items-center py-4 gap-6'
-        >
-          <Switch 
-            options={TIME_TYPES}
-            name='day'
-            value={type}
-            onChange={handleChange}
-          />
-          <Box
-            className='w-full h-[256px] overflow-y-auto flex flex-col items-center gap-4'
-          >
-            <Box className='w-[311px] h-[52px] flex items-center gap-2'>
-              <Typography text='1' />
-              <Typography text='Multivalue' />
-            </Box>
-            <Box className='w-[311px] h-[52px] flex items-center gap-2'>
-              <Typography text='2' />
-              <Typography text='Multivalue' />
-            </Box>
-            <Box className='w-[311px] h-[52px] flex items-center gap-2'>
-              <Typography text='3' />
-              <Typography text='Multivalue' />
-            </Box>
-            <Box className='w-[311px] h-[52px] flex items-center gap-2'>
-              <Typography text='4' />
-              <Typography text='Multivalue' />
-            </Box>
-            <Box className='w-[311px] h-[52px] flex items-center gap-2'>
-              <Typography text='5' />
-              <Typography text='Multivalue' />
-            </Box>
-            <Box className='w-[311px] h-[52px] flex items-center gap-2'>
-              <Typography text='6' />
-              <Typography text='Multivalue' />
-            </Box>
-            <Box className='w-[311px] h-[52px] flex items-center gap-2'>
-              <Typography text='7' />
-              <Typography text='Multivalue' />
-            </Box>
-          </Box>
-        </Box>
+        <LeaderBoard type={type} height='h-[350px]' handleChange={handleChange} />
       </Box>
     </Box>
-  )
-}
+  );
+};

@@ -1,6 +1,6 @@
 import { Telegram, X, News } from '@/components/icons';
 
-export const Title = 'LETS JOURNEY TO THE UNIVERSE TOGETHER WITH TON';
+export const Title = 'OnboardingTitle';
 
 export const Actions = [
   {
@@ -18,4 +18,4 @@ export const Actions = [
     icon: <News width={40} height={40} />,
     link: 'https://nobleblocks.com'
   }
-]
+];

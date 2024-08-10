@@ -13,7 +13,7 @@ const SvgGiftBlue: FC<SvgIconProps> = ({ width = 70, height = 71 }) => {
       </defs>
     </svg>
 
-  )
-}
+  );
+};
 
 export default SvgGiftBlue;

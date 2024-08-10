@@ -13,7 +13,7 @@ const SvgChat: FC<SvgIconProps> = ({ width = 25, height = 23 }) => {
       </defs>
     </svg>
 
-  )
-}
+  );
+};
 
 export default SvgChat;

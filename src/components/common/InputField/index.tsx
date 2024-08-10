@@ -1,16 +1,17 @@
-import { type FC } from 'react'
+import { type FC } from 'react';
 
 interface InputFieldProps {
   name: string;
   className: string;
   value: string;
   limit?: number;
+  placeholder?: string;
   onChange?: (name: string, value: string) => void;
   onBlur?: (name: string, value: string) => void;
   onKeyDown?: (name: string, value: string) => void;
 }
 
-const InputField: FC<InputFieldProps> = ({ name, className, value, limit = 0, onChange, onBlur, onKeyDown }) => {
+const InputField: FC<InputFieldProps> = ({ name, className, value, limit = 0, placeholder = '', onChange, onBlur, onKeyDown }) => {
 
   const handleChange = (e: React.FormEvent<HTMLInputElement>) => {
     if (e.currentTarget.value.length > limit && limit) return;
@@ -18,23 +19,23 @@ const InputField: FC<InputFieldProps> = ({ name, className, value, limit = 0, on
     if (onChange) {
       onChange(name, e.currentTarget.value);
     }
-  }
+  };
 
   const handleBlur = (e: React.FormEvent<HTMLInputElement>) => {
     if (onBlur) {
       onBlur(name, e.currentTarget.value);
     }
-  }
+  };
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === 'Enter' && onKeyDown) {
       onKeyDown(name, value);
     }
-  }
+  };
 
   return (
-    <input className={className} id={name} type='input' value={value} onChange={handleChange} onBlur={handleBlur} onKeyDown={handleKeyDown} />
-  )
-}
+    <input className={className} id={name} type='input' value={value} placeholder={placeholder} onChange={handleChange} onBlur={handleBlur} onKeyDown={handleKeyDown} />
+  );
+};
 
-export default InputField
+export default InputField;

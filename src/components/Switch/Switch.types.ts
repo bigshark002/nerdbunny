@@ -1,7 +1,7 @@
 type OptionProps = {
   key: string;
   value: string;
-}
+};
 
 export interface SwitchProps {
   name: string;

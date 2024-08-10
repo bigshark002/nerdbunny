@@ -1,0 +1,38 @@
+{
+    "canisters": {    
+      "frontend": {
+        "frontend": {
+          "entrypoint": "build/frontend/index.html"
+        },
+        "source": [
+          "build/frontend"
+        ],
+        "type": "assets"
+      }
+    },
+    "defaults": {
+      "build": {
+        "packtool": "",
+        "args": ""
+      }
+    },
+    "networks": {
+      "local": {
+        "bind": "127.0.0.1:8080",
+        "type": "ephemeral"
+      },
+      "ic": {
+        "providers": ["https://ic0.app/"],
+        "type": "persistent"
+      },
+      "ic_test": {
+        "providers": ["https://ic0.app/"],
+        "type": "persistent"
+      },
+      "web_test": {
+        "providers": ["https://ic0.app/"],
+        "type": "persistent"
+      }
+    },
+    "version": 1
+  }

@@ -2,21 +2,21 @@
 export const PROFILE_TYPES = [
   {
     key: 'miner',
-    value: 'MINERS'
+    value: 'Miner'
   },
   {
     key: 'squad',
-    value: 'SQUAD'
+    value: 'Squad'
   }
 ];
 
 export const TIME_TYPES = [
   {
     key: 'day',
-    value: 'DAY'
+    value: 'Day'
   },
   {
     key: 'week',
-    value: 'WEEK'
+    value: 'Week'
   }
 ];

@@ -1,25 +1,25 @@
-import { type FC } from 'react'
+import { type FC } from 'react';
 
 interface TypographyProps {
   className?: string;
-  text: string;
+  text?: string;
   onClick?: () => void;
 }
 
-const Typography: FC<TypographyProps> = ({ className = '', text, onClick }) => {
+const Typography: FC<TypographyProps> = ({ className = '', text = '', onClick }) => {
 
   const handleClick = (e: React.MouseEvent<HTMLSpanElement>) => {
     if (onClick) {
       e.stopPropagation();
       onClick();
     }
-  }
+  };
 
   return (
     <span className={`${className} text-ellipsis`} onClick={handleClick}>
       {text}
     </span>
-  )
-}
+  );
+};
 
-export default Typography
+export default Typography;

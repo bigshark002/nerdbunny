@@ -6,7 +6,6 @@ import path from 'path'
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react(), tsconfigPaths()],
-  base: process.env.VITE_BASE_PATH || '/nerdbunnyfrontend',
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),

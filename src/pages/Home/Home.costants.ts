@@ -1,12 +1,12 @@
-import { joinSquad, lead, build, frens, diamond } from '@/components/images'
+import { joinSquad, lead, build, frens, diamond } from '@/components/images';
 
-export const Title = 'Nerd Bunny, Special Event'
+export const Title = 'HomeEvent';
 
 export const Squad = {
   image: joinSquad,
-  text: 'Join Squad',
+  text: 'JoinSquad',
   link: 'joinsquad',
-}
+};
 
 export const Actions =[
   {
@@ -19,7 +19,7 @@ export const Actions =[
     id: 1,
     image: frens,
     text: 'Frens',
-    link: '/friend',
+    link: 'friend',
   },
   {
     id: 2,
@@ -33,4 +33,14 @@ export const Actions =[
     text: 'Lead',
     link: 'lead'
   }
-]
+];
+
+export const MockDatas = {
+  totalValue: 1452133545,
+  currentValue: 1638,
+  multiValue: 2,
+  coinLimit: 3000,
+  currentLimit: 0,
+  fillRate: 20,
+  secretCode: 36864100,
+};

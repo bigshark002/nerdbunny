@@ -195,7 +195,7 @@ const SvgGroup: FC<SvgIconProps> = ({ width = 32, height = 32 }) => {
       <rect x="24" y="10" width="2" height="2" fill="white" />
       <rect x="20" y="18" width="2" height="2" fill="white" />
     </svg>
-  )
-}
+  );
+};
 
 export default SvgGroup;

@@ -1,7 +1,8 @@
-import { type FC, useRef, RefObject } from 'react'
-import { useClickOutSide } from '@/hooks'
-import { Modal, Box, Image, Typography } from '@/components/common'
-import { swipe } from '@/components/images'
+import { type FC, useRef, RefObject } from 'react';
+import { useTranslation } from 'react-i18next';
+import { useClickOutSide } from '@/hooks';
+import { Modal, Box, Image, Typography } from '@/components/common';
+import { swipe } from '@/components/images';
 
 interface HelpModalProps {
   open: boolean;
@@ -9,6 +10,7 @@ interface HelpModalProps {
 }
 
 const HelpModal: FC<HelpModalProps> = ({ open, onClose }) => {
+  const { t } = useTranslation();
   const modalRef: RefObject<HTMLDivElement> = useRef(null);
 
   useClickOutSide(modalRef, onClose);
@@ -22,11 +24,11 @@ const HelpModal: FC<HelpModalProps> = ({ open, onClose }) => {
         <Image className='w-[68px] h-[79.66px]' src={swipe} />
         <Typography
           className='w-[212px] font-Motserrat text-[18px] text-center font-extrabold text-stroke-1 text-stroke-BluePrimary spacing-[10px]'
-          text='SWIPE YOUR FINGER TO GET COIN'
+          text={t('Help')}
         />
       </Box>
     </Modal>
-  )
-}
+  );
+};
 
-export default HelpModal
+export default HelpModal;
